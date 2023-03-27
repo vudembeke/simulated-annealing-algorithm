@@ -24,6 +24,7 @@
     <li>Update the temperature (cooling), e.g. T = aT where 0 < a < 1</li>
 </ul>
 </ol>
+
 ## Notes on Parameters
 <p> The greater the value of T (temperature), the greater likelihood of moving around the search space. As T get closer to zero, the algorithm will function like greedy hill climbing </p>
 
