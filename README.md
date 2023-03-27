@@ -28,6 +28,6 @@
 <p> The greater the value of T (temperature), the greater likelihood of moving around the search space. As T get closer to zero, the algorithm will function like greedy hill climbing </p>
 <p> Good starting values for T will vary problem by problem. I usually start with 1, 10, 100 and adjust after a few experiments. For a, I normally choose 0.95. However, you can change T by any amount, Robert and Casella suggest a temperature decrease in 1/log(1+i) for i in 1:N
 
-## References:
+## References
 <p> Introduction to Monte Carlo Methods with R by Robert and Casella  </p>
 <p> Optimization by Simuland Annealing: An Experimental Evaluation; Part I, Graph Partitioning  </p>
