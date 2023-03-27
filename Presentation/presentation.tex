@@ -1,0 +1,62 @@
+\documentclass{beamer}
+\usepackage{graphicx} % Required for inserting images
+\usetheme{default}
+
+\title{Simulated Annealing Algorithm}
+\author{VUDEMBEKE BRIANNA, NYAGA MUTHOMI NATHANIEL}
+\date{March 25, 2023}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}{Introduction}
+\begin{itemize}
+\item Simulated annealing is a probabilistic technique for finding global optimum.
+\item This algorithm is a proposed alternative to generic greedy search, hill climbing algorithms.
+\item Hill climbing algorithms are good at finding local optimal solutions but don't perform well with global solutions.
+\item Simulated annealing is inspired by the process of annealing in metallurgy where a material is heated and slowly cooled under controlled conditions to increase the size of the crystals in the material and reduce their defects.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Simulated Annealing Algorithm}
+\begin{enumerate}
+\item Generate an initial candidate solution x.
+\item Get an initial Temperature $ T > 0$.
+\item for i in 1:N(N = number of iterations)
+\begin{itemize}
+\item Sample $ \zeta ~ g(\zeta)$ where g is a symmetrical distribution.
+\item The new candidate solution is $x' = x ± \zeta$
+\item Calculate probability $p=exp(\Delta h/T_{i})$
+\item Accept the candidate solution with probability $p; u U(0, 1)$, accept $x = x'$ if $u \leq p.$
+\item Update the temperature (cooling), e.g. $T = aT$ where $0 < a < 1$
+\end{itemize}
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Simulated Annealing Algorithm Contd.}
+\begin{itemize}
+\item The main difference in strategy between greedy search and simulated annealing is that greedy search will always choose the best proposal, whereas simulated annealing has a probability (using a Boltzmann distribution) of choosing a worse proposal than strictly only accepting improvements.
+\item This helps the algorithm find a global optimum by jumping out of local optimum.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Notes on Parameters}
+\begin{itemize}
+\item The greater the value of T (temperature), the greater the likelihood of moving around the search space. As T gets closer to zero, the algorithm will function like greedy hill climbing.
+\item Good starting values for T will vary problem by problem. We usually start with 1, 10, 100, and adjust after a few experiments.
+\item For a, we normally choose 0.95. However, you can change T by any amount, Robert and Casella suggest a temperature decrease in $1/\log(1+i)$ for $i$ in $1:N$.
+\item For a review of cooling schedules, we recommend reading "A comparison of simulated annealing cooling strategies."
+\end{itemize}
+\end{frame}
+
+\begin{frame}{References}
+\begin{itemize}
+\item Introduction to Monte Carlo Methods with R by Robert and Casella.
+\item Optimization by Simulated Annealing: An Experimental Evaluation; Part I, Graph Partitioning.
+\end{itemize}
+\end{frame}
+
+\end{document}
