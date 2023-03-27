@@ -12,9 +12,9 @@
 <p> The main difference in strategy between greedy search and simulated annealing is that greedy search will always choose the best proposal, where the simulated annealing has a probability(using a Boltzman distribution) of choosing a worst proposal than strictly only accepting improvements. </p>
 <p> This helps the algorithm find a global optimum by jumping out of local optimum. </p>
 <p> The simulated annealing algorithm goes as follows for a function h(.) that we're trying to maximize:  </p>
-          1. Generate an initial candidate solution x
-          2. Get an initial Temperature $ T > 0$
-          3. for i in 1:N(N = number of iterations)
+1. Generate an initial candidate solution x
+2. Get an initial Temperature $ T > 0$
+3. for i in 1:N(N = number of iterations)
               a. Sample $ \zeta ~ g(\zeta)$ where g is a symmetrical distribution.
               b. The new candidate solution is $x' = x ± \zeta$
               c. Calculate probability $p=exp(\Delta h/T_{i})$
