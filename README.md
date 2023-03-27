@@ -12,14 +12,14 @@ Simulated annealing is a probabilistic to finding a global maximum.
 The main difference in strategy between greedy search and simulated annealing is that greedy search will always choose the best proposal, where the simulated annealing has a probability(using a Boltzman distribution) of choosing a worst proposal than strictly only accepting improvements.
 This helps the algorithm find a global optimum by jumping out of local optimum.
 The simulated annealing algorithm goes as follows for a function h(.) that we're trying to maximize:
-    1. Generate an initial candidate solution x
-    2. Get an initial Temperature $ T > 0$
-    3. for i in 1:N(N = number of iterations)
-        a. Sample $ \zeta ~ g(\zeta)$ where g is a symmetrical distribution.
-        b. The new candidate solution is $x' = x ± \zeta$
-        c. Calculate probability $p=exp(\Delta h/T_{i})$
-        d. Accept the candidate solution with probability $p; u U(0, 1)$, accept $x = x'$ if $u \leq p.$
-        e. Update the temperature (cooling), e.g. $T = aT where 0 < a < 1$
+markup:   1. Generate an initial candidate solution x
+          2. Get an initial Temperature $ T > 0$
+          3. for i in 1:N(N = number of iterations)
+              a. Sample $ \zeta ~ g(\zeta)$ where g is a symmetrical distribution.
+              b. The new candidate solution is $x' = x ± \zeta$
+              c. Calculate probability $p=exp(\Delta h/T_{i})$
+              d. Accept the candidate solution with probability $p; u U(0, 1)$, accept $x = x'$ if $u \leq p.$
+              e. Update the temperature (cooling), e.g. $T = aT where 0 < a < 1$
 
 ## Notes on Parameters
 The greater the value of T (temperature), the greater likelihood of moving around the search space. As T get closer to zero, the algorithm will function like greedy hill climbing
